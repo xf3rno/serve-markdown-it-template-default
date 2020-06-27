@@ -218,6 +218,15 @@
         })
       }
 
+      const isSyntaxStyleEnabled = (syntax) => {
+        const sheets = Object.keys(document.styleSheets)
+
+        return !!sheets.find((index) => {
+          const sheet = document.styleSheets[index]
+          return !(/index.css$/u.test(sheet.href)) && !sheet.disabled
+        })
+      }
+
       const getActiveTheme = () => {
         const savedTheme = localStorage && localStorage[THEME_KEY]
 
@@ -242,6 +251,10 @@
       }
 
       const setSyntax = (syntax) => {
+        if (isSyntaxStyleEnabled(syntax)) {
+          return
+        }
+
         disableSyntaxStyleSheets()
         enableSyntaxStyleSheet(syntax)
         $("#svw-settings-syntax-theme-control").val(syntax)
