@@ -1,0 +1,18 @@
+@import 'sass-themify/sass-themify';
+@import './variables';
+
+.svw-debug.closed .svw-markdown {
+  display: none;
+}
+
+.svw-debug.closed .svw-header {
+  border: 0;
+}
+
+.svw-debug .svw-markdown {
+  padding: 0;
+}
+
+.svw-debug pre > code {
+  border: 0;
+}

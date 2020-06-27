@@ -1,0 +1,117 @@
+{% extends 'layouts/base.njk' %}
+
+{% block page_title %}
+{{ path }}
+{% endblock %}
+
+{% block content %}
+<div class='svw-content svw-centered'>
+  {% if templateConfig.sections.contentHeader != false %}
+  <div class='svw-header'>
+    <div class='svw-header-left'>
+      {% if not inRoot %}
+      <a href='{{ parentPath }}' class='svw-header-nav-back bold'>
+        <img src='/svg/icons/material/navigate-before.svg' alt='Back' />
+        <p>../</p>
+      </a>
+      {% endif %}
+    </div>
+
+    <div class='svw-header-right'>
+      <p>{{ nodes.length }} items</p>
+      <p>{{ totalSize.toLocaleString() }} kB total</p>
+      <p class='bold'>{{ path }}</p>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if templateConfig.sections.content != false %}
+  {% if templateConfig.explorer != false %}
+  <table class='svw-directory-listing'>
+    <thead>
+      <tr>
+        {% for column in templateConfig.explorer.columns %}
+        {% if column == 'name' %}
+          <th>Name</th>
+        {% elseif column == 'user' %}
+          <th>User</th>
+        {% elseif column == 'group' %}
+          <th>Group</th>
+        {% elseif column == 'mode' %}
+          <th>Mode</th>
+        {% elseif column == 'type' %}
+          <th>Type</th>
+        {% elseif column == 'size' %}
+          <th>Size</th>
+        {% endif %}
+        {% endfor %}
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for node in nodes %}
+        <tr
+          {% if node.isDirectory %}
+          class='svw-directory-item'
+          {% else %}
+          class='svw-file-item'
+          {% endif %}
+        >
+          {% for column in templateConfig.explorer.columns %}
+          {% if column == 'name' %}
+            <td>
+              {% if path == '/' %}
+              <a href='/{{ node.name }}'>
+              {% else %}
+              <a href='{{ path }}/{{ node.name }}'>
+              {% endif %}
+                {% if templateConfig.explorer.icons and node.icon %}
+                <img src='/svg/icons/mime/{{ node.icon }}' alt='{{ node.name }}'/>
+                {% endif %}
+
+                <p>
+                  {% if node.isDirectory %}
+                  {{ node.name }}/
+                  {% else %}
+                  {{ node.name }}
+                  {% endif %}
+                </p>
+              </a>
+            </td>
+          {% elseif column == 'user' %}
+            <td><p>{{ node.user }}</p></td>
+          {% elseif column == 'group' %}
+            <td><p>{{ node.group }}</p></td>
+          {% elseif column == 'mode' %}
+            <td><p>{{ node.mode }}</p></td>
+          {% elseif column == 'type' %}
+            <td><p>{{ node.type }}</p></td>
+          {% elseif column == 'size' %}
+            <td><p>{{ (+(node.size / 1024).toFixed(2)).toLocaleString() }} kB</p></td>
+          {% endif %}
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% if templateConfig.explorer.dataTable %}
+{% if templateConfig.explorer %}
+{% if templateConfig.sections.content != false %}
+{% if templateConfig.sections.order.indexOf('content') != -1 %}
+<script src='/js/simple-datatables/simple-datatables.js'></script>
+<script>
+  $(document).ready(function () {
+    new window.simpleDatatables.DataTable('table', {{ templateConfig.explorer.dataTable | dump | safe }})
+  })
+</script>
+{% endif %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endblock %}
