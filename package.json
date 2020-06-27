@@ -112,5 +112,10 @@
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-sass-guidelines": "^7.0.0",
     "updates": "^10.2.15"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test && yarn docs && git add docs"
+    }
   }
 }
