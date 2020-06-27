@@ -17,9 +17,7 @@
     padding: $mpad;
   }
 
-  a > code,
-  p > code,
-  li > code {
+  *:not(pre) > code {
     border-radius: 0;
     font-family: $font-body;
     font-size: 14px;
@@ -65,6 +63,6 @@
   }
 
   .svw-markdown *:not(pre) > code {
-    background: sass-themify-get-color('bg-seperator');
+    background: sass-themify-get-color('bg-forms');
   }
 }

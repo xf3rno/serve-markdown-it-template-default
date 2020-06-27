@@ -2280,6 +2280,10 @@ select {
   margin: 0;
 }
 
+tbody tr:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 body.theme-light-default-blue input,
 body.theme-light-default-blue textarea {
   background: #efefef;
@@ -2555,10 +2559,6 @@ body.theme-dark-ayu .svw-header-right > *:not(:first-child) {
   margin-right: 0;
 }
 
-.svw-directory-listing tr:nth-child(2n) {
-  background: rgba(0, 0, 0, 0.05);
-}
-
 .svw-directory-listing td p {
   margin: 0;
 }
@@ -2587,9 +2587,7 @@ body.theme-dark-ayu .svw-header-right > *:not(:first-child) {
   line-height: 1.5;
   padding: 16px;
 }
-.svw-markdown a > code,
-.svw-markdown p > code,
-.svw-markdown li > code {
+.svw-markdown *:not(pre) > code {
   border-radius: 0;
   font-family: "Lato", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -2630,7 +2628,7 @@ body.theme-light-default-blue .svw-markdown em {
   color: #212529;
 }
 body.theme-light-default-blue .svw-markdown *:not(pre) > code {
-  background: #adb5bd;
+  background: #efefef;
 }
 
 body.theme-light-default-green .svw-markdown pre > code {
@@ -2650,7 +2648,7 @@ body.theme-light-default-green .svw-markdown em {
   color: #212529;
 }
 body.theme-light-default-green .svw-markdown *:not(pre) > code {
-  background: #adb5bd;
+  background: #efefef;
 }
 
 body.theme-dark-adwaita-blue .svw-markdown pre > code {
@@ -2670,7 +2668,7 @@ body.theme-dark-adwaita-blue .svw-markdown em {
   color: #fefefe;
 }
 body.theme-dark-adwaita-blue .svw-markdown *:not(pre) > code {
-  background: #2a4151;
+  background: #282828;
 }
 
 body.theme-dark-adwaita-green .svw-markdown pre > code {
@@ -2690,7 +2688,7 @@ body.theme-dark-adwaita-green .svw-markdown em {
   color: #fefefe;
 }
 body.theme-dark-adwaita-green .svw-markdown *:not(pre) > code {
-  background: #2a4151;
+  background: #282828;
 }
 
 body.theme-dark-ayu .svw-markdown pre > code {
@@ -2710,7 +2708,7 @@ body.theme-dark-ayu .svw-markdown em {
   color: #e6e1cf;
 }
 body.theme-dark-ayu .svw-markdown *:not(pre) > code {
-  background: #36a3d9;
+  background: #5c6773;
 }
 
 .svw-todo-list {

@@ -56,6 +56,11 @@ select {
   }
 }
 
+tbody tr:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
 @include sass-themify() {
   input,
   textarea {
