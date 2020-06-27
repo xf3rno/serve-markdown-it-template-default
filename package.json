@@ -1,6 +1,6 @@
 {
   "name": "serve-markdown-it-template-default",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "description": "Default Template for serve-markdown-it (sermit).",
   "author": "Cris Mihalache <me@f3rno.com>",
