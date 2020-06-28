@@ -224,11 +224,10 @@
       }
 
       const isSyntaxStyleEnabled = (syntax) => {
-        const sheets = Object.keys(document.styleSheets)
+        const sheets = Object.values(document.styleSheets)
 
-        return !!sheets.find((index) => {
-          const sheet = document.styleSheets[index]
-          return !(/index.css$/u.test(sheet.href)) && !sheet.disabled
+        return !!sheets.filter(s => !!s.href).find((s) => {
+          return s.href.indexOf(syntax) !== -1 && !s.disabled
         })
       }
 
