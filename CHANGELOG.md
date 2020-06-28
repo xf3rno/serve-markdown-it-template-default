@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.6](https://github.com/f3rno/server-markdown-it-template-default/compare/v1.0.5...v1.0.6) (2020-06-28)
+
+
+### Bug Fixes
+
+* prefer greatest dep ver in update-deps ([4401505](https://github.com/f3rno/server-markdown-it-template-default/commit/440150537bf60d1dd0953a7a29ebfe3161031bf8))
+
 ### [1.0.5](https://github.com/f3rno/server-markdown-it-template-default/compare/v1.0.4...v1.0.5) (2020-06-28)
 
 
