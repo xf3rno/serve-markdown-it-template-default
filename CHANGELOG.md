@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/f3rno/server-markdown-it-template-default/compare/v1.0.4...v1.0.5) (2020-06-28)
+
+
+### Bug Fixes
+
+* base.njk initial syntax application [loaded stylesheet parsing] ([4bfe688](https://github.com/f3rno/server-markdown-it-template-default/commit/4bfe688f314bc3a7e2ab9558dc2eb620b157e087))
+
 ### [1.0.4](https://github.com/f3rno/server-markdown-it-template-default/compare/v1.0.3...v1.0.4) (2020-06-28)
 
 
