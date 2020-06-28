@@ -2,7 +2,7 @@
   "name": "serve-markdown-it-template-default",
   "version": "1.0.3",
   "license": "MIT",
-  "description": "Default Template for serve-markdown-it (sermit).",
+  "description": "Default template for serve-markdown-it",
   "author": "Cris Mihalache <me@f3rno.com>",
   "main": "index.js",
   "engines": {
@@ -15,8 +15,7 @@
     "res/**"
   ],
   "directories": {
-    "lib": "lib",
-    "docs": "docs"
+    "lib": "lib"
   },
   "repository": {
     "type": "git",
@@ -31,23 +30,22 @@
     "html",
     "markdown",
     "markdown-it",
-    "sermit",
     "serve-markdown-it",
+    "sermit",
+    "sermit-template",
     "nunjucks",
     "scss"
   ],
   "scripts": {
     "build": "npm run clean-public && npm run build-public && npm run docs",
-    "build-public": "npm run build-public-assets && npm run build-public-styles",
-    "build-public-assets": "node scripts/build_assets.js",
-    "build-public-styles": "node scripts/build_styles.js",
+    "build-public": "node scripts/build_public.js",
     "clean-public": "rm -rf public/*",
-    "docs": "rm -rf docs/reference.md && ./node_modules/.bin/jsdoc2md -f index.js 'lib/**/*.js' > docs/reference.md",
+    "docs": "rm -rf DOCUMENTATION.md && ./node_modules/.bin/jsdoc2md -f index.js 'lib/**/*.js' test > DOCUMENTATION.md",
+    "gen-readme": "rm README.md && node scripts/gen_readme.js",
     "lint": "npm run lint-js && npm run lint-scss",
-    "lint-js": "./node_modules/.bin/eslint package.json '*.js' lib",
+    "lint-js": "./node_modules/.bin/eslint package.json '*.js' lib test",
     "lint-scss": "./node_modules/.bin/stylelint res/styles",
     "release": "npm run update-version && git push origin master --follow-tags && npm publish",
-    "serve-docs": "node index.js docs/reference.md",
     "test": "npm run lint && npm run unit",
     "unit": "NODE_ENV=test ./node_modules/.bin/nyc ./node_modules/.bin/mocha --recursive",
     "update-deps": "./node_modules/.bin/updates -u -p -c",
@@ -116,7 +114,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && yarn docs && git add docs"
+      "pre-commit": "yarn test && yarn docs && yarn gen-readme && git add README.md DOCUMENTATION.md"
     }
   }
 }
