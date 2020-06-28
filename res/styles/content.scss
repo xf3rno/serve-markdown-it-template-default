@@ -7,6 +7,34 @@
 
 .svw-content {
   border: 2px solid transparent;
+  opacity: 1;
+
+  .svw-closeable {
+    max-height: 2000px;
+    overflow: hidden;
+  }
+}
+
+.svw-content.closed {
+  opacity: 0.5;
+
+  .svw-closeable {
+    max-height: 0;
+  }
+
+  .svw-header {
+    border: 0;
+  }
+}
+
+.svw-content.animate {
+  &.closed {
+    transition: opacity 0.25s ease-out;
+  }
+
+  .svw-closeable {
+    transition: max-height 0.25s ease-out;
+  }
 }
 
 .svw-outer {
@@ -15,12 +43,13 @@
 
 @include sass-themify() {
   .svw-content {
-    background: sass-themify-get-color('bg-content');
-    border-color: sass-themify-get-color('border-highlight');
-    color: sass-themify-get-color('fg');
+    background: sass-themify-get-color('bg-content') or sass-themify-get-color('bg') or none;
+    border-color: sass-themify-get-color('border-content') or sass-themify-get-color('border-highlight') or transparent;
+    color: sass-themify-get-color('fg-content') or sass-themify-get-color('fg') or inherit;
   }
 
   .svw-outer {
-    background: sass-themify-get-color('bg-outer');
+    background: sass-themify-get-color('bg-outer') or sass-themify-get-color('bg') or none;
+    color: sass-themify-get-color('fg-outer') or sass-themify-get-color('fg') or inherit;
   }
 }

@@ -1,0 +1,17 @@
+@import '../vendor/gruvbox-colors';
+
+@function gen-dark-gruvbox-theme() {
+  @return (
+    'fg': $gb-dm-fg1,
+    'fg-links': $gb-dm-dark-blue,
+    'fg-forms': #111,
+    'bg-outer': #333,
+    'bg-content': $gb-dm-bg0,
+    'bg-seperator': $gb-dm-bg3,
+    'bg-active': $gb-dm-bg4,
+    'bg-inactive': $gb-dm-bg1,
+    'bg-header': $gb-dm-bg0-soft,
+    'bg-forms': $gb-dm-fg2,
+    'border-highlight': darken($gb-dm-dark-green, 15%)
+  );
+}

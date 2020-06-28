@@ -1,0 +1,58 @@
+// Background and foreground.
+
+$color-moonfly-black: #080808;
+$color-moonfly-white: #c6c6c6;
+
+// Variations of charcoal-grey.
+
+$color-moonfly-grey0: #373c40;
+$color-moonfly-grey253: #dadada;
+$color-moonfly-grey249: #b2b2b2;
+$color-moonfly-grey247: #9e9e9e;
+$color-moonfly-grey246: #949494;
+$color-moonfly-grey244: #808080;
+$color-moonfly-grey241: #626262;
+$color-moonfly-grey237: #3a3a3a;
+$color-moonfly-grey236: #303030;
+$color-moonfly-grey235: #262626;
+$color-moonfly-grey234: #1c1c1c;
+$color-moonfly-grey233: #121212;
+
+// Core theme colors.
+
+$color-moonfly-wheat: #cfcfb0;
+$color-moonfly-yellow: #e3c78a;
+$color-moonfly-orange: #de935f;
+$color-moonfly-coral: #f09479;
+$color-moonfly-lime: #85dc85;
+$color-moonfly-green: #8cc85f;
+$color-moonfly-emerald: #42cf89;
+$color-moonfly-blue: #80a0ff;
+$color-moonfly-sky: #78c2ff;
+$color-moonfly-turquoise: #7ee0ce;
+$color-moonfly-purple: #ae81ff;
+$color-moonfly-cranberry: #e2637f;
+$color-moonfly-violet: #d183e8;
+$color-moonfly-crimson: #f74782;
+$color-moonfly-red: #ff5454;
+
+// Extra colors
+
+$color-moonfly-blue111: #87afff;
+
+@function gen-moonfly-theme() {
+  @return (
+    'fg': $color-moonfly-white,
+    'fg-links': $color-moonfly-purple,
+    'fg-forms': $color-moonfly-white,
+    'fg-md-headers': $color-moonfly-orange, //
+    'fg-active': $color-moonfly-coral, //
+    'fg-inactive': $color-moonfly-grey249, //
+
+    'bg': $color-moonfly-black,
+    'bg-seperator': $color-moonfly-wheat,
+    'bg-header': $color-moonfly-grey236,
+    'bg-forms': $color-moonfly-grey237,
+    'border-highlight': $color-moonfly-coral
+  );
+}

@@ -43,38 +43,34 @@ select {
   padding: 4px 32px 4px 8px;
 }
 
-.svw-control > * {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.svw-control label {
-  margin-right: $spad;
-
-  p {
-    margin: 0;
-  }
-}
-
 tbody tr:nth-child(2n) {
   background: rgba(0, 0, 0, 0.1);
 }
 
-
 @include sass-themify() {
-  input,
+  input {
+    background: sass-themify-get-color('bg-input') or sass-themify-get-color('bg-forms') or none;
+    color: sass-themify-get-color('fg-input') or sass-themify-get-color('fg-forms') or initial;
+  }
+
+  input[type='checkbox'] { // stylelint-disable-line
+    background: sass-themify-get-color('fg-input') or sass-themify-get-color('fg-forms') or none;
+    color: sass-themify-get-color('bg-input') or sass-themify-get-color('bg-forms') or initial;
+  }
+
   textarea {
-    background: sass-themify-get-color('bg-forms');
-    color: sass-themify-get-color('fg-forms');
+    background: sass-themify-get-color('bg-textarea') or sass-themify-get-color('bg-forms') or none;
+    color: sass-themify-get-color('fg-textarea') or sass-themify-get-color('fg-forms') or initial;
   }
 
   select {
-    background: sass-themify-get-color('bg-forms') url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' height='63' width='117' fill='%23#{string.slice(inspect(sass-themify-get-color('fg-forms')), 2)}'><path d='M115 2c-1-2-4-2-5 0L59 53 7 2a4 4 0 0 0-5 5l54 54 2 2 3-2 54-54c2-1 2-4 0-5z'/></svg>") calc(100% - 12px) 50%/12px no-repeat;
-    color: sass-themify-get-color('fg-forms');
+    background: #{sass-themify-get-color('bg-selecct') or sass-themify-get-color('bg-forms')} url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' height='63' width='117' fill='%23#{string.slice(inspect(sass-themify-get-color('fg-forms')), 2)}'><path d='M115 2c-1-2-4-2-5 0L59 53 7 2a4 4 0 0 0-5 5l54 54 2 2 3-2 54-54c2-1 2-4 0-5z'/></svg>") calc(100% - 12px) 50%/12px no-repeat;
+    color: sass-themify-get-color('fg-select') or sass-themify-get-color('fg-forms') or initial;
   }
 
   a,
   a > * {
-    color: sass-themify-get-color('fg-link');
+    background: sass-themify-get-color('bg-links') or none;
+    color: sass-themify-get-color('fg-links') or sass-themify-get-color('fg-highlight') or initial;
   }
 }

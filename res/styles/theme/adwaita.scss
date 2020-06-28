@@ -11,7 +11,7 @@ $color-adwaita-gray-0: #1b1b1b;
 @function gen-adwaita-dark-theme($accent-color) {
   @return (
     'fg': $color-adwaita-white-0,
-    'fg-link': $accent-color,
+    'fg-links': $accent-color,
     'fg-forms': $color-adwaita-white-1,
     'bg-outer': $color-adwaita-gray-3,
     'bg-content': $color-adwaita-gray-2,

@@ -2,17 +2,22 @@
 @import './variables';
 
 .svw-settings {
-  select {
-    margin: 4px 0;
+  .svw-header-right select,
+  .svw-header-left select {
+    border: 0;
   }
 
-  p {
-    line-height: 28px;
+  .svw-header-left > *:not(:last-child) {
+    margin-right: $spad;
+  }
+
+  .svw-header-right > *:not(:first-child) {
+    margin-left: $spad;
   }
 }
 
 @include sass-themify() {
   .svw-settings.svw-header {
-    border-bottom-color: rgba(sass-themify-get-color('border-highlight'), 0.4);
+    border-bottom-color: sass-themify-get-color('border-settings') or rgba(sass-themify-get-color('border-highlight'), 0.4) or transparent;
   }
 }

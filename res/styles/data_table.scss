@@ -12,10 +12,21 @@
 }
 
 .dataTable-top { // stylelint-disable-line
-  padding: 16px 24px 8px;
+  padding: 16px;
 }
 
-.dataTable-bottom { // stylelint-disable-line
+.dataTable-container {
+  p {
+    margin: 0;
+  }
+
+  td:first-child > * {
+    padding-left: 8px;
+  }
+
+  td:last-child > * {
+    padding-right: 8px;
+  }
 }
 
 .dataTable-dropdown { // stylelint-disable-line
@@ -34,21 +45,29 @@
     }
 
     &::after {
-      border-bottom-color: sass-themify-get-color('fg');
+      border-bottom-color: sass-themify-get-color('fg-table-sorter') or sass-themify-get-color('fg');
     }
 
     &::before {
-      border-top-color: sass-themify-get-color('fg');
+      border-top-color: sass-themify-get-color('fg-table-sorter') or sass-themify-get-color('fg');
     }
   }
 
   .dataTable-pagination a {
-    color: sass-themify-get-color('fg-link');
+    background: sass-themify-get-color('bg-table-pagination') or sass-themify-get-color('bg-links') or none;
+    color: sass-themify-get-color('fg-table-pagination') or sass-themify-get-color('fg-links') or inherit;
+  }
+
+  .dataTable-table tr,
+  .dataTable-table th,
+  .dataTable-table thead {
+    border-color: sass-themify-get-color('border-table-header') or sass-themify-get-color('border-highlight') or transparent;
   }
 
   .dataTable-pagination .active a,
   .dataTable-pagination .active a:focus,
   .dataTable-pagination .active a:hover {
-    background-color: sass-themify-get-color('bg-active');
+    background-color: sass-themify-get-color('bg-table-pagination-active') or sass-themify-get-color('bg-table-pagination') or sass-themify-get-color('bg-active') or initial;
+    color: sass-themify-get-color('fg-table-pagination-active') or sass-themify-get-color('fg-table-pagination') or sass-themify-get-color('fg-links') or inherit;
   }
 }

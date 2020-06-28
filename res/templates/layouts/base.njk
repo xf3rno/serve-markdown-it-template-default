@@ -10,7 +10,7 @@
     {% if templateConfig.maxWidth %}
       <style>
         .svw-centered {
-          max-width: {{ templateConfig.maxWidth | safe }};
+          max-width: {{ templateConfig.maxWidth }};
         }
       </style>
     {% endif %}
@@ -22,161 +22,163 @@
   <body class="theme-dark-ayu">
     <div class="svw-outer">
       <div class="svw-content-wrapper {{ flags or "" }}">
-        {% for section in templateConfig.sections.order %}
+        {% for section in layout.order %}
         {% if section == 'content' %}
-        {% if templateConfig.sections.content != false %}
-        {% if templateConfig.sections.order.indexOf('content') != -1 %}
+        {% if layout.content != false %}
+        {% if layout.order.indexOf('content') != -1 %}
           {% block content %}{% endblock %}
         {% endif %}
         {% endif %}
         {% elseif section == 'settings' %}
-        {% if templateConfig.sections.settings != false %}
-        {% if templateConfig.sections.order.indexOf('settings') != -1 %}
+        {% if layout.settings != false %}
+        {% if layout.order.indexOf('settings') != -1 %}
           <div class="svw-content svw-centered">
-            <div class="svw-settings svw-header">
+            <div class="svw-settings svw-header standalone">
               <div class="svw-header-left">
-                <div class="svw-control">
-                  <label for="svw-settings-syntax-theme-control">
-                    <p>Syntax Colors</p>
-                  </label>
+                <select id="svw-settings-syntax-theme-control" value="darcula">
+                  <option value="a11y-dark">A11y dark</option>
+                  <option value="a11y-light">A11y light</option>
+                  <option value="agate">Agate</option>
+                  <option value="androidstudio">Androidstudio</option>
+                  <option value="an-old-hope">An old hope</option>
+                  <option value="arduino-light">Arduino light</option>
+                  <option value="arta">Arta</option>
+                  <option value="ascetic">Ascetic</option>
+                  <option value="atelier-cave-dark">Atelier cave dark</option>
+                  <option value="atelier-cave-light">Atelier cave light</option>
+                  <option value="atelier-dune-dark">Atelier dune dark</option>
+                  <option value="atelier-dune-light">Atelier dune light</option>
+                  <option value="atelier-estuary-dark">Atelier estuary dark</option>
+                  <option value="atelier-estuary-light">Atelier estuary light</option>
+                  <option value="atelier-forest-dark">Atelier forest dark</option>
+                  <option value="atelier-forest-light">Atelier forest light</option>
+                  <option value="atelier-heath-dark">Atelier heath dark</option>
+                  <option value="atelier-heath-light">Atelier heath light</option>
+                  <option value="atelier-lakeside-dark">Atelier lakeside dark</option>
+                  <option value="atelier-lakeside-light">Atelier lakeside light</option>
+                  <option value="atelier-plateau-dark">Atelier plateau dark</option>
+                  <option value="atelier-plateau-light">Atelier plateau light</option>
+                  <option value="atelier-savanna-dark">Atelier savanna dark</option>
+                  <option value="atelier-savanna-light">Atelier savanna light</option>
+                  <option value="atelier-seaside-dark">Atelier seaside dark</option>
+                  <option value="atelier-seaside-light">Atelier seaside light</option>
+                  <option value="atelier-sulphurpool-dark">Atelier sulphurpool dark</option>
+                  <option value="atelier-sulphurpool-light">Atelier sulphurpool light</option>
+                  <option value="atom-one-dark">Atom one dark</option>
+                  <option value="atom-one-dark-reasonable">Atom-one-dark-reasonable</option>
+                  <option value="atom-one-light">Atom one light</option>
+                  <option value="brown-paper">Brown paper</option>
+                  <option value="brown-papersq.png">Brown-papersq.png</option>
+                  <option value="codepen-embed">Codepen embed</option>
+                  <option value="color-brewer">Color brewer</option>
+                  <option value="darcula" selected="">Darcula</option>
+                  <option value="dark">Dark</option>
+                  <option value="default">Default</option>
+                  <option value="docco">Docco</option>
+                  <option value="dracula">Dracula</option>
+                  <option value="far">Far</option>
+                  <option value="foundation">Foundation</option>
+                  <option value="github">Github</option>
+                  <option value="github-gist">Github gist</option>
+                  <option value="gml">Gml</option>
+                  <option value="googlecode">Googlecode</option>
+                  <option value="gradient-dark">Gradient dark</option>
+                  <option value="grayscale">Grayscale</option>
+                  <option value="gruvbox-dark">Gruvbox dark</option>
+                  <option value="gruvbox-light">Gruvbox light</option>
+                  <option value="hopscotch">Hopscotch</option>
+                  <option value="hybrid">Hybrid</option>
+                  <option value="idea">Idea</option>
+                  <option value="ir-black">Ir black</option>
+                  <option value="isbl-editor-dark">Isbl editor dark</option>
+                  <option value="isbl-editor-light">Isbl editor light</option>
+                  <option value="kimbie.dark">Kimbie.dark</option>
+                  <option value="kimbie.light">Kimbie.light</option>
+                  <option value="lightfair">Lightfair</option>
+                  <option value="lioshi">Lioshi</option>
+                  <option value="magula">Magula</option>
+                  <option value="mono-blue">Mono blue</option>
+                  <option value="monokai">Monokai</option>
+                  <option value="monokai-sublime">Monokai sublime</option>
+                  <option value="night-owl">Night owl</option>
+                  <option value="nnfx">Nnfx</option>
+                  <option value="nnfx-dark">Nnfx dark</option>
+                  <option value="nord">Nord</option>
+                  <option value="obsidian">Obsidian</option>
+                  <option value="ocean">Ocean</option>
+                  <option value="paraiso-dark">Paraiso dark</option>
+                  <option value="paraiso-light">Paraiso light</option>
+                  <option value="pojoaque">Pojoaque</option>
+                  <option value="pojoaque.jpg">Pojoaque.jpg</option>
+                  <option value="purebasic">Purebasic</option>
+                  <option value="qtcreator_dark">Qtcreator_dark</option>
+                  <option value="qtcreator_light">Qtcreator_light</option>
+                  <option value="railscasts">Railscasts</option>
+                  <option value="rainbow">Rainbow</option>
+                  <option value="routeros">Routeros</option>
+                  <option value="school-book">School book</option>
+                  <option value="school-book.png">School-book.png</option>
+                  <option value="shades-of-purple">Shades of purple</option>
+                  <option value="solarized-dark">Solarized dark</option>
+                  <option value="solarized-light">Solarized light</option>
+                  <option value="srcery">Srcery</option>
+                  <option value="sunburst">Sunburst</option>
+                  <option value="tomorrow">Tomorrow</option>
+                  <option value="tomorrow-night-blue">Tomorrow night blue</option>
+                  <option value="tomorrow-night-bright">Tomorrow night bright</option>
+                  <option value="tomorrow-night">Tomorrow night</option>
+                  <option value="tomorrow-night-eighties">Tomorrow night eighties</option>
+                  <option value="vs2015">Vs2015</option>
+                  <option value="vs">Vs</option>
+                  <option value="xcode">Xcode</option>
+                  <option value="xt256">Xt256</option>
+                  <option value="zenburn">Zenburn</option>
+                </select>
 
-                  <select id="svw-settings-syntax-theme-control" value="darcula">
-                    <option value="a11y-dark">A11y dark</option>
-                    <option value="a11y-light">A11y light</option>
-                    <option value="agate">Agate</option>
-                    <option value="androidstudio">Androidstudio</option>
-                    <option value="an-old-hope">An old hope</option>
-                    <option value="arduino-light">Arduino light</option>
-                    <option value="arta">Arta</option>
-                    <option value="ascetic">Ascetic</option>
-                    <option value="atelier-cave-dark">Atelier cave dark</option>
-                    <option value="atelier-cave-light">Atelier cave light</option>
-                    <option value="atelier-dune-dark">Atelier dune dark</option>
-                    <option value="atelier-dune-light">Atelier dune light</option>
-                    <option value="atelier-estuary-dark">Atelier estuary dark</option>
-                    <option value="atelier-estuary-light">Atelier estuary light</option>
-                    <option value="atelier-forest-dark">Atelier forest dark</option>
-                    <option value="atelier-forest-light">Atelier forest light</option>
-                    <option value="atelier-heath-dark">Atelier heath dark</option>
-                    <option value="atelier-heath-light">Atelier heath light</option>
-                    <option value="atelier-lakeside-dark">Atelier lakeside dark</option>
-                    <option value="atelier-lakeside-light">Atelier lakeside light</option>
-                    <option value="atelier-plateau-dark">Atelier plateau dark</option>
-                    <option value="atelier-plateau-light">Atelier plateau light</option>
-                    <option value="atelier-savanna-dark">Atelier savanna dark</option>
-                    <option value="atelier-savanna-light">Atelier savanna light</option>
-                    <option value="atelier-seaside-dark">Atelier seaside dark</option>
-                    <option value="atelier-seaside-light">Atelier seaside light</option>
-                    <option value="atelier-sulphurpool-dark">Atelier sulphurpool dark</option>
-                    <option value="atelier-sulphurpool-light">Atelier sulphurpool light</option>
-                    <option value="atom-one-dark">Atom one dark</option>
-                    <option value="atom-one-dark-reasonable">Atom-one-dark-reasonable</option>
-                    <option value="atom-one-light">Atom one light</option>
-                    <option value="brown-paper">Brown paper</option>
-                    <option value="brown-papersq.png">Brown-papersq.png</option>
-                    <option value="codepen-embed">Codepen embed</option>
-                    <option value="color-brewer">Color brewer</option>
-                    <option value="darcula" selected="">Darcula</option>
-                    <option value="dark">Dark</option>
-                    <option value="default">Default</option>
-                    <option value="docco">Docco</option>
-                    <option value="dracula">Dracula</option>
-                    <option value="far">Far</option>
-                    <option value="foundation">Foundation</option>
-                    <option value="github">Github</option>
-                    <option value="github-gist">Github gist</option>
-                    <option value="gml">Gml</option>
-                    <option value="googlecode">Googlecode</option>
-                    <option value="gradient-dark">Gradient dark</option>
-                    <option value="grayscale">Grayscale</option>
-                    <option value="gruvbox-dark">Gruvbox dark</option>
-                    <option value="gruvbox-light">Gruvbox light</option>
-                    <option value="hopscotch">Hopscotch</option>
-                    <option value="hybrid">Hybrid</option>
-                    <option value="idea">Idea</option>
-                    <option value="ir-black">Ir black</option>
-                    <option value="isbl-editor-dark">Isbl editor dark</option>
-                    <option value="isbl-editor-light">Isbl editor light</option>
-                    <option value="kimbie.dark">Kimbie.dark</option>
-                    <option value="kimbie.light">Kimbie.light</option>
-                    <option value="lightfair">Lightfair</option>
-                    <option value="lioshi">Lioshi</option>
-                    <option value="magula">Magula</option>
-                    <option value="mono-blue">Mono blue</option>
-                    <option value="monokai">Monokai</option>
-                    <option value="monokai-sublime">Monokai sublime</option>
-                    <option value="night-owl">Night owl</option>
-                    <option value="nnfx">Nnfx</option>
-                    <option value="nnfx-dark">Nnfx dark</option>
-                    <option value="nord">Nord</option>
-                    <option value="obsidian">Obsidian</option>
-                    <option value="ocean">Ocean</option>
-                    <option value="paraiso-dark">Paraiso dark</option>
-                    <option value="paraiso-light">Paraiso light</option>
-                    <option value="pojoaque">Pojoaque</option>
-                    <option value="pojoaque.jpg">Pojoaque.jpg</option>
-                    <option value="purebasic">Purebasic</option>
-                    <option value="qtcreator_dark">Qtcreator_dark</option>
-                    <option value="qtcreator_light">Qtcreator_light</option>
-                    <option value="railscasts">Railscasts</option>
-                    <option value="rainbow">Rainbow</option>
-                    <option value="routeros">Routeros</option>
-                    <option value="school-book">School book</option>
-                    <option value="school-book.png">School-book.png</option>
-                    <option value="shades-of-purple">Shades of purple</option>
-                    <option value="solarized-dark">Solarized dark</option>
-                    <option value="solarized-light">Solarized light</option>
-                    <option value="srcery">Srcery</option>
-                    <option value="sunburst">Sunburst</option>
-                    <option value="tomorrow">Tomorrow</option>
-                    <option value="tomorrow-night-blue">Tomorrow night blue</option>
-                    <option value="tomorrow-night-bright">Tomorrow night bright</option>
-                    <option value="tomorrow-night">Tomorrow night</option>
-                    <option value="tomorrow-night-eighties">Tomorrow night eighties</option>
-                    <option value="vs2015">Vs2015</option>
-                    <option value="vs">Vs</option>
-                    <option value="xcode">Xcode</option>
-                    <option value="xt256">Xt256</option>
-                    <option value="zenburn">Zenburn</option>
-                  </select>
-                </div>
+                <label for="svw-settings-syntax-theme-control">
+                  <p>Syntax</p>
+                </label>
               </div>
 
               <div class="svw-header-right">
-                <div class="svw-control">
-                  <label for="svw-settings-theme-control">
-                    <p>Theme</p>
-                  </label>
+                <label for="svw-settings-theme-control">
+                  <p>Theme</p>
+                </label>
 
-                  <select id="svw-settings-theme-control">
-                    <option value="dark-ayu">Ayu Dark</option>
-                    <option value="light-default-blue">Light Default Blue</option>
-                    <option value="light-default-green">Light Default Green</option>
-                    <option value="dark-adwaita-blue">Dark Adwaita Blue</option>
-                    <option value="dark-adwaita-green">Dark Adwaita Green</option>
-                  </select>
-                </div>
+                <select id="svw-settings-theme-control">
+                  <option value="dark-ayu">Ayu Dark</option>
+                  <option value="dark-gruvbox">Gruvbox Dark</option>
+                  <option value="moonfly">Moonfly</option>
+                  <option value="gotham">Gotham</option>
+                  <option value="flatwhite">Flatwhite</option>
+                  <option value="light-default-blue">Light Default Blue</option>
+                  <option value="light-default-green">Light Default Green</option>
+                  <option value="dark-adwaita-blue">Dark Adwaita Blue</option>
+                  <option value="dark-adwaita-green">Dark Adwaita Green</option>
+                </select>
               </div>
             </div>
           </div>
         {% endif %}
         {% endif %}
         {% elseif section == 'debug' %}
-        {% if templateConfig.sections.debug != false %}
-        {% if templateConfig.sections.order.indexOf('debug') != -1 %}
-          <div class="svw-content svw-centered">
-            <div class="svw-debug closed">
+        {% if layout.debug != false %}
+        {% if layout.order.indexOf('debug') != -1 %}
+          <div class="svw-content svw-centered closed {%if templateConfig.animate %}{{ 'animate' | safe }}{% endif %}">
+            <div class="svw-debug">
               <div class="svw-header">
                 <div class="svw-header-left">
                   <p class="bold">debug</p>
+                  <a class="svw-debug-toggle-button" href="javascript:void(0)">
+                    <p>toggle</p>
+                  </a>
                 </div>
 
                 <div class="svw-header-right">
-                  <a class="svw-debug-toggle-button" href="javascript:void(0)"><p>toggle</p></a>
                 </div>
               </div>
 
-              <div class="svw-markdown">
+              <div class="svw-markdown svw-closeable">
                 {{ configHTML | safe }}
               </div>
             </div>
@@ -269,8 +271,8 @@
       $(document).ready(initOnReady)
     </script>
 
-    {% if templateConfig.sections.settings != false %}
-    {% if templateConfig.sections.order.indexOf('settings') != -1 %}
+    {% if layout.settings != false %}
+    {% if layout.order.indexOf('settings') != -1 %}
     <script>
       const initSettingsBarOnReady = () => {
         $("#svw-settings-theme-control").change(onThemeChanged)
@@ -304,11 +306,11 @@
     {% endif %}
     {% endif %}
 
-    {% if templateConfig.sections.debug != false %}
-    {% if templateConfig.sections.order.indexOf('debug') != -1 %}
+    {% if layout.debug != false %}
+    {% if layout.order.indexOf('debug') != -1 %}
     <script>
-      const toggleConfigPanel = () => {
-        const elm = $('.svw-debug')
+      const toggleDebugPanel = () => {
+        const elm = $('.svw-debug').parent()
 
         if (elm.hasClass('closed')) {
           elm.removeClass('closed')
@@ -318,11 +320,12 @@
       }
 
       $(document).ready(() => {
-        $('.svw-debug-toggle-button').click(toggleConfigPanel)
+        $('.svw-debug-toggle-button').click(toggleDebugPanel)
       })
     </script>
     {% endif %}
     {% endif %}
+
     {% block scripts %}{% endblock %}
   </body>
 </html>

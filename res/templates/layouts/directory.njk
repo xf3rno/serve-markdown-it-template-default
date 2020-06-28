@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class='svw-content svw-centered'>
-  {% if templateConfig.sections.contentHeader != false %}
+  {% if layout.contentHeader != false %}
   <div class='svw-header'>
     <div class='svw-header-left'>
       {% if not inRoot %}
@@ -15,17 +15,18 @@
         <p>../</p>
       </a>
       {% endif %}
+
+      <p class='bold'>{{ path }}</p>
     </div>
 
     <div class='svw-header-right'>
       <p>{{ nodes.length }} items</p>
-      <p>{{ totalSize.toLocaleString() }} kB total</p>
-      <p class='bold'>{{ path }}</p>
+      <p>{{ totalSize.toLocaleString() }}</p>
     </div>
   </div>
   {% endif %}
 
-  {% if templateConfig.sections.content != false %}
+  {% if layout.content != false %}
   {% if templateConfig.explorer != false %}
   <table class='svw-directory-listing'>
     <thead>
@@ -65,8 +66,17 @@
               {% else %}
               <a href='{{ path }}/{{ node.name }}'>
               {% endif %}
-                {% if templateConfig.explorer.icons and node.icon %}
-                <img src='/svg/icons/mime/{{ node.icon }}' alt='{{ node.name }}'/>
+
+                {% if templateConfig.explorer.icons %}
+                {% if node.icon %}
+                <img
+                  class='svw-file-icon'
+                  src='/svg/icons/mime/{{ node.icon }}'
+                  alt='{{ node.name }}'
+                />
+                {% else %}
+                <span class='svw-file-icon-placeholder'></span>
+                {% endif %}
                 {% endif %}
 
                 <p>
@@ -87,7 +97,7 @@
           {% elseif column == 'type' %}
             <td><p>{{ node.type }}</p></td>
           {% elseif column == 'size' %}
-            <td><p>{{ (+(node.size / 1024).toFixed(2)).toLocaleString() }} kB</p></td>
+            <td><p>{{ node.size }}</p></td>
           {% endif %}
           {% endfor %}
         </tr>
@@ -102,8 +112,8 @@
 {% block scripts %}
 {% if templateConfig.explorer.dataTable %}
 {% if templateConfig.explorer %}
-{% if templateConfig.sections.content != false %}
-{% if templateConfig.sections.order.indexOf('content') != -1 %}
+{% if layout.content != false %}
+{% if layout.order.indexOf('content') != -1 %}
 <script src='/js/simple-datatables/simple-datatables.js'></script>
 <script>
   $(document).ready(function () {

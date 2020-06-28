@@ -1,0 +1,47 @@
+// Base colors.
+$color-gotham-base0: #0c1014;
+$color-gotham-base1: #11151c;
+$color-gotham-base2: #091f2e;
+$color-gotham-base3: #0a3749;
+$color-gotham-base4: #1e6479;
+$color-gotham-base5: #599cab;
+$color-gotham-base6: #99d1ce;
+$color-gotham-base7: #d3ebe9;
+
+// Other colors.
+$color-gotham-red: #c23127;
+$color-gotham-orange: #d26937;
+$color-gotham-yellow: #edb443;
+$color-gotham-magenta: #888ca6;
+$color-gotham-violet: #4e5166;
+$color-gotham-blue: #195466;
+$color-gotham-cyan: #33859e;
+$color-gotham-green: #2aa889;
+
+@function gen-gotham-theme() {
+  @return (
+    'fg-md-code-inline': $color-gotham-green,
+    'fg-content': $color-gotham-base7,
+    'fg-header': $color-gotham-green,
+    'fg-links': $color-gotham-yellow,
+    'fg-md-headers': $color-gotham-green,
+    'fg-table-sorter': $color-gotham-base6,
+
+    'bg-outer': $color-gotham-base0,
+    'bg-content': $color-gotham-base2,
+    'bg-seperator': $color-gotham-base6,
+    'bg-header': $color-gotham-base2,
+    'bg-header-closed': $color-gotham-base0,
+
+    'fg-active': $color-gotham-base7,
+    'bg-active': $color-gotham-blue,
+
+    'fg-inactive': $color-gotham-base6,
+    'bg-inactive': $color-gotham-base2,
+
+    'fg-forms': $color-gotham-base7,
+    'bg-forms': $color-gotham-base1,
+
+    'border-highlight': $color-gotham-blue
+  );
+}

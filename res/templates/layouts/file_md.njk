@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="svw-content svw-centered">
-  {% if templateConfig.sections.contentHeader != false %}
+  {% if layout.contentHeader != false %}
   <div class="svw-header">
     <div class="svw-header-left">
       {% if not inRoot %}
@@ -16,13 +16,17 @@
       </a>
       {% endif %}
 
-      <a class="bold" href="{{ path }}/raw"><p>view raw</p></a>
+      <p class='bold'>{{ path }}</p>
     </div>
 
     <div class="svw-header-right">
-      <p>{{ size.toLocaleString() }} kB</p>
+      <p>{{ size.toLocaleString() }}</p>
+
+      {% if type %}
       <p>{{ type }}</p>
-      <p class="bold">{{ path }}</p>
+      {% endif %}
+
+      <a class="bold" href="{{ path }}/raw"><p>view raw</p></a>
     </div>
   </div>
   {% endif %}

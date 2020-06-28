@@ -12,29 +12,14 @@
   }
 }
 
-.svw-directory-listing a img {
+.svw-file-icon-placeholder,
+.svw-file-icon {
   height: $mpad;
   margin-right: $spad;
   width: $mpad;
 
   &:last-child {
     margin-right: 0;
-  }
-}
-
-.svw-directory-listing td {
-  p {
-    margin: 0;
-  }
-
-  &:first-child > p,
-  &:first-child > a {
-    padding-left: 16px;
-  }
-
-  &:last-child > p,
-  &:last-child > a {
-    padding-right: 16px;
   }
 }
 

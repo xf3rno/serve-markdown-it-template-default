@@ -2,12 +2,15 @@
 @import './variables';
 
 .svw-header {
-  border-bottom: 2px solid;
   display: flex;
   flex-direction: row;
   font-size: 14px;
   line-height: 20px;
-  padding: 4px $pad;
+  padding: $spad calc(#{$pad} - #{$spad});
+
+  &:not(.standalone) {
+    border-bottom: 2px solid;
+  }
 
   p {
     margin: 0;
@@ -15,7 +18,7 @@
 }
 
 .svw-header a {
-  > * {
+  > *:not(:only-child) {
     display: inline-block;
     vertical-align: middle;
   }
@@ -68,20 +71,25 @@
 
 @include sass-themify() {
   .svw-header {
-    background: sass-themify-get-color('bg-header');
-    border-bottom-color: sass-themify-get-color('border-highlight');
-    color: sass-themify-get-color('fg');
+    background: sass-themify-get-color('bg-header') or none;
+    border-bottom-color: sass-themify-get-color('border-header') or sass-themify-get-color('border-highlight') or transparent;
 
+    &,
     a {
-      color: sass-themify-get-color('fg-link');
+      color: sass-themify-get-color('fg-header') or inherit;
     }
   }
 
+  .closed .svw-header {
+    background: sass-themify-get-color('bg-header-closed') or sass-themify-get-color('bg-header') or none;
+    color: sass-themify-get-color('fg-header-closed') or sass-themify-get-color('fg-header') or inherit;
+  }
+
   .svw-header-left > *:not(:last-child) {
-    border-right-color: sass-themify-get-color('bg-seperator');
+    border-right-color: sass-themify-get-color('bg-header-seperator') sass-themify-get-color('bg-seperator') or transparent;
   }
 
   .svw-header-right > *:not(:first-child) {
-    border-left-color: sass-themify-get-color('bg-seperator');
+    border-left-color: sass-themify-get-color('bg-header-seperator') sass-themify-get-color('bg-seperator') or transparent;
   }
 }

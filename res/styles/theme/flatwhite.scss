@@ -1,0 +1,61 @@
+$color-flatwhite-base1: #605a52;
+$color-flatwhite-base2: #93836c;
+$color-flatwhite-base3: #b9a992;
+$color-flatwhite-base4: #dcd3c6;
+$color-flatwhite-base5: #e4ddd2;
+$color-flatwhite-base6: #f1ece4;
+$color-flatwhite-base7: #f7f3ee;
+$color-flatwhite-accent: #6a4cff;
+$color-flatwhite-orange-text: #5b5143;
+$color-flatwhite-orange-text-sec: #957f5f;
+$color-flatwhite-orange-bg: #f7e0c3;
+$color-flatwhite-green-text: #525643;
+$color-flatwhite-green-text-sec: #81895d;
+$color-flatwhite-green-bg: #e2e9c1;
+$color-flatwhite-teal-text: #465953;
+$color-flatwhite-teal-text-sec: #5f8c7d;
+$color-flatwhite-teal-bg: #d2ebe3;
+$color-flatwhite-blue-text: #4c5361;
+$color-flatwhite-blue-text-sec: #7382a0;
+$color-flatwhite-blue-bg: #dde4f2;
+$color-flatwhite-purple-text: #614c61;
+$color-flatwhite-purple-text-sec: #9c739c;
+$color-flatwhite-purple-bg: #f1ddf1;
+$color-flatwhite-diff-add: #2db448;
+$color-flatwhite-diff-change: #f2a60d;
+$color-flatwhite-diff-change-dark: #795306;
+$color-flatwhite-diff-delete: #ff1414;
+$color-flatwhite-diff-renamed: #52aeff;
+$color-flatwhite-white: #fff;
+
+@function gen-flatwhite-theme() {
+  @return (
+    'bg-outer': $color-flatwhite-base7,
+    'bg-seperator': $color-flatwhite-base6,
+
+    'fg-header': $color-flatwhite-orange-text,
+    'bg-header': $color-flatwhite-base7,
+
+    'fg-header-closed': $color-flatwhite-base3,
+    'bg-header-closed': $color-flatwhite-base7,
+
+    'fg-md-code-inline': $color-flatwhite-green-text,
+    'bg-md-code-inline': $color-flatwhite-green-bg,
+
+    'fg-content': $color-flatwhite-base1,
+    'bg-content': $color-flatwhite-base7,
+
+    'fg-links': $color-flatwhite-orange-text,
+    'bg-links': $color-flatwhite-orange-bg,
+
+    'fg-md-headers': $color-flatwhite-purple-text,
+    'bg-md-headers': $color-flatwhite-purple-bg,
+
+    'fg-table-sorter': $color-flatwhite-base1,
+
+    'fg-forms': $color-flatwhite-base2,
+    'bg-forms': $color-flatwhite-base5,
+
+    'border-highlight': $color-flatwhite-accent
+  );
+}

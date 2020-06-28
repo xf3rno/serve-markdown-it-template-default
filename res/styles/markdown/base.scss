@@ -3,7 +3,7 @@
 
 .svw-markdown {
   line-height: 1.5;
-  padding: $mpad $pad;
+  padding: $mpad $mpad;
 
   > *:first-child {
     margin-top: 0;
@@ -44,25 +44,46 @@
 }
 
 @include sass-themify() {
-  .svw-markdown pre > code {
-    border-color: sass-themify-get-color('border-highlight');
-  }
+  .svw-markdown {
+    color: sass-themify-get-color('fg-md') or sass-themify-get-color('fg') or inherit;
 
-  .svw-markdown p,
-  .svw-markdown *:not(pre) > code,
-  .svw-markdown h1,
-  .svw-markdown h2,
-  .svw-markdown h3,
-  .svw-markdown h4,
-  .svw-markdown h5,
-  .svw-markdown h6,
-  .svw-markdown blockquote,
-  .svw-markdown strong,
-  .svw-markdown em {
-    color: sass-themify-get-color('fg');
-  }
+    pre > code {
+      border-color: sass-themify-get-color('border-md-code-block') or sass-themify-get-color('border-highlight') or transparent;
+    }
 
-  .svw-markdown *:not(pre) > code {
-    background: sass-themify-get-color('bg-forms');
+    p {
+      background: sass-themify-get-color('bg-md-p') or none;
+      color: sass-themify-get-color('fg-md-p') or inherit;
+    }
+
+    em {
+      background: sass-themify-get-color('bg-md-italic') or none;
+      color: sass-themify-get-color('fg-md-italic') or inherit;
+    }
+
+    strong {
+      background: sass-themify-get-color('bg-md-bold') or none;
+      color: sass-themify-get-color('fg-md-bold') or inherit;
+    }
+
+    blockquote {
+      background: sass-themify-get-color('bg-md-blockquote') or none;
+      color: sass-themify-get-color('fg-md-blockquote') or inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      background: sass-themify-get-color('bg-md-headers') or sass-themify-get-color('bg-headers') or none;
+      color: sass-themify-get-color('fg-md-headers') or sass-themify-get-color('fg-headers') or inherit;
+    }
+
+    *:not(pre) > code {
+      background: sass-themify-get-color('bg-md-code-inline') or none;
+      color: sass-themify-get-color('fg-md-code-inline') or inherit;
+    }
   }
 }
