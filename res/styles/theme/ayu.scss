@@ -11,7 +11,10 @@
       'bg-inactive': #5c6773,
       'bg-header': #2d3640,
       'bg-forms': #5c6773,
-      'border-highlight': #f73
+      'border-highlight': #f73,
+
+      'fg-md-code-inline': #e6e1cf,
+      'bg-md-code-inline': #5c6773
     );
   } @else {
     @return ();

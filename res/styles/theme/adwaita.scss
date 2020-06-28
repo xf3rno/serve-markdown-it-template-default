@@ -10,16 +10,22 @@ $color-adwaita-gray-0: #1b1b1b;
 
 @function gen-adwaita-dark-theme($accent-color) {
   @return (
-    'fg': $color-adwaita-white-0,
-    'fg-links': $accent-color,
-    'fg-forms': $color-adwaita-white-1,
     'bg-outer': $color-adwaita-gray-3,
+
+    'fg': $color-adwaita-white-0,
     'bg-content': $color-adwaita-gray-2,
+
+    'fg-links': $accent-color,
+
+    'fg-forms': $color-adwaita-white-1,
     'bg-seperator': $color-adwaita-gray-1,
     'bg-active': $color-adwaita-gray-3,
     'bg-inactive': $color-adwaita-gray-0,
     'bg-header': $color-adwaita-gray-2,
     'bg-forms': $color-adwaita-gray-4,
-    'border-highlight': $accent-color
+    'border-highlight': $accent-color,
+
+    'fg-md-code-inline': $color-adwaita-white-0,
+    'bg-md-code-inline': $color-adwaita-gray-1
   );
 }

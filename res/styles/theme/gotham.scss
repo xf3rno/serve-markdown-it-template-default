@@ -21,6 +21,8 @@ $color-gotham-green: #2aa889;
 @function gen-gotham-theme() {
   @return (
     'fg-md-code-inline': $color-gotham-green,
+    'bg-md-code-inline': $color-gotham-base0,
+
     'fg-content': $color-gotham-base7,
     'fg-header': $color-gotham-green,
     'fg-links': $color-gotham-yellow,

@@ -2,15 +2,17 @@
 @import 'sass-themify/sass-themify';
 @import './ayu';
 @import './gotham';
-@import './default';
+@import './basic';
 @import './adwaita';
 @import './moonfly';
 @import './flatwhite';
 @import './dark-gruvbox';
 
 @include sass-themify-init((
-  'theme-light-default-blue': gen-light-default-theme($oc-blue-9, $oc-blue-5),
-  'theme-light-default-green': gen-light-default-theme($oc-green-9, $oc-green-5),
+  'theme-basic-red': gen-basic-theme($oc-red-9, $oc-red-5),
+  'theme-basic-purple': gen-basic-theme($oc-violet-9, $oc-violet-5),
+  'theme-basic-blue': gen-basic-theme($oc-blue-9, $oc-blue-5),
+  'theme-basic-green': gen-basic-theme($oc-green-9, $oc-green-5),
   'theme-dark-adwaita-blue': gen-adwaita-dark-theme(#2685ff),
   'theme-dark-adwaita-green': gen-adwaita-dark-theme(#36cc54),
   'theme-dark-ayu': gen-ayu-theme('dark'),
