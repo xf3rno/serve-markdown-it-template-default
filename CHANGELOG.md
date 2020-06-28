@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/f3rno/server-markdown-it-template-default/compare/v1.0.1...v1.0.2) (2020-06-28)
+
+
+### Bug Fixes
+
+* tweak themes, add bg to md-code-inline ([5d47549](https://github.com/f3rno/server-markdown-it-template-default/commit/5d47549a2966149eb05446701a5998e2d443f867))
+
 ### [1.0.1](https://github.com/f3rno/server-markdown-it-template-default/compare/v1.0.0...v1.0.1) (2020-06-27)
 
 ## 1.0.0 (2020-06-27)
