@@ -11,7 +11,8 @@
   "files": [
     "index.js",
     "lib/**",
-    "public/**"
+    "public/**",
+    "res/**"
   ],
   "directories": {
     "lib": "lib",
