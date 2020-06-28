@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/f3rno/server-markdown-it-template-default/compare/v1.0.3...v1.0.4) (2020-06-28)
+
+
+### Bug Fixes
+
+* forgot new .README.md template ([9c865de](https://github.com/f3rno/server-markdown-it-template-default/commit/9c865de4b6bc463d97864ab82d888f6c964a7a97))
+
 ### [1.0.3](https://github.com/f3rno/server-markdown-it-template-default/compare/v1.0.2...v1.0.3) (2020-06-28)
 
 
