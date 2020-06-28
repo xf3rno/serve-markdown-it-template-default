@@ -56,7 +56,6 @@
   "dependencies": {
     "colors": "^1.4.0",
     "file-icon-vectors": "^1.0.0",
-    "fs-extra": "^9.0.1",
     "highlight.js": "^10.1.1",
     "lodash": "^4.17.15",
     "mime-types": "^2.1.27",
@@ -108,6 +107,7 @@
     "jsdoc-to-markdown": "^6.0.1",
     "mocha": "^8.0.1",
     "nyc": "^15.1.0",
+    "serve-markdown-it-lib": "^1.0.3",
     "standard-version": "^8.0.0",
     "stylelint": "^13.6.1",
     "stylelint-config-rational-order": "^0.1.2",
