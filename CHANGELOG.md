@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.7](https://github.com/f3rno/server-markdown-it-template-default/compare/v1.0.6...v1.0.7) (2020-07-04)
+
+
+### Bug Fixes
+
+* increase closeable max height, temp hacky fix ([09ff641](https://github.com/f3rno/server-markdown-it-template-default/commit/09ff6415a18b6e8dffbc614aba980ad6cc1ffde1))
+* use new layout data var names from shared lib ([1b987f3](https://github.com/f3rno/server-markdown-it-template-default/commit/1b987f3ae9967bd155110472e3d9e4a87b37c522))
+
 ### [1.0.6](https://github.com/f3rno/server-markdown-it-template-default/compare/v1.0.5...v1.0.6) (2020-06-28)
 
 
