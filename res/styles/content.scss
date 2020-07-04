@@ -9,8 +9,9 @@
   border: 2px solid transparent;
   opacity: 1;
 
+  // TODO: Refactor animation, max-height is hacky
   .svw-closeable {
-    max-height: 2000px;
+    max-height: 3000px;
     overflow: hidden;
   }
 }
